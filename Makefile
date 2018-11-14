@@ -5,6 +5,7 @@ setup: .env
 	$(MAKE) up
 
 up: .env
+	docker-compose run --rm app make install
 	docker-compose up -d
 
 .env:
