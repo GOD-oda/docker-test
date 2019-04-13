@@ -4,3 +4,6 @@ services:
     build: ./app
     volumes:
       - ./app:/var/www/html
+    command: "php -S localhost:8000 a.php"
+    ports:
+      - 8888:8000

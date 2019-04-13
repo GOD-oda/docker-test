@@ -1,4 +1,4 @@
-.PHONY: setup up
+.PHONY: setup up build
 
 setup: .env
 	docker-compose run --rm app make install
@@ -6,7 +6,10 @@ setup: .env
 
 up: .env
 	docker-compose run --rm app make install
-	docker-compose up -d
+	docker-compose up
+
+build:
+	docker-compose build app
 
 .env:
-	cp app/src/.env.example app/src/.env
+	cp app/.env.example app/.env

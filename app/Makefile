@@ -2,8 +2,10 @@
 
 composer.phar:
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-	php composer-setup.php --version $(COMPOSER_VERSION)
-	php-r "unlink('composer-setup.php');"
+	# --versionをDockerfileのENVで指定したが、
+	# $()で参照出来ていない
+	php composer-setup.php --version=1.8.5
+	php -r "unlink('composer-setup.php');"
 
 install: composer.phar
 	php composer.phar install
