@@ -9,4 +9,4 @@ up: .env
 	docker-compose up -d
 
 .env:
-	cp .env.example .env
+	cp app/src/.env.example app/src/.env
